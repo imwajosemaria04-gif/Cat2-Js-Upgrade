@@ -1,46 +1,51 @@
 const programs = [
-    {
-        name: "Personal Training",
-        description: "1-on-1 coaching tailored for fast results."
-    },
-    {
-        name: "Fat Loss",
-        description: "Science-based systems that actually work."
-    },
-    {
-        name: "Muscle Gain",
-        description: "Build strength, size, and confidence."
-    },
-    {
-        name: "Online Coaching",
-        description: "Train anywhere with expert guidance."
-    }
+  { name: "Personal Training", description: "1-on-1 coaching tailored for fast results." },
+  { name: "Fat Loss", description: "Science-based systems that actually work." },
+  { name: "Muscle Gain", description: "Build strength, size, and confidence." },
+  { name: "Online Coaching", description: "Train anywhere with expert guidance." }
 ];
 
-const programsContainer = document.getElementById("programsContainer");
+const container = document.getElementById("programs");
 
 programs.forEach(program => {
-    const card = document.createElement("div");
-    card.classList.add("card");
+  const card = document.createElement("div");
+  card.classList.add("card");
 
-    const cardTitle = document.createElement("h3");
-    cardTitle.textContent = program.name;
+  card.innerHTML = `
+    <h3>${program.name}</h3>
+    <p>${program.description}</p>
+  `;
 
-    const cardDescription = document.createElement("p");
-    cardDescription.textContent = program.description;
-
-    card.appendChild(cardTitle);
-    card.appendChild(cardDescription);
-
-    programsContainer.appendChild(card);
+  container.appendChild(card);
 });
-const cardTitle = document.createElement("h3");
-const cardTitle.textContent = program.name;
+const goalInput = document.getElementById("goalInput");
+const addGoalBtn = document.getElementById("addGoalBtn");
+const goalList = document.getElementById("goalList");
 
-const cardDescription = document.createElement("p");
-cardDescription.textContent = program.description;
+addGoalBtn.addEventListener("click", function () {
+    const goal = goalInput.value.trim();
 
-card.appendChild(cardTitle);
-card.appendChild(cardDescription);
+    if (goal === "") {
+        alert("Please enter a fitness goal.");
+        return;
+    }
 
+    const goalItem = document.createElement("div");
+    goalItem.classList.add("goal-item");
 
+    const goalText = document.createElement("span");
+    goalText.textContent = goal;
+
+    const removeBtn = document.createElement("button");
+    removeBtn.textContent = "Remove";
+
+    removeBtn.addEventListener("click", function () {
+        goalItem.remove();
+    });
+
+    goalItem.appendChild(goalText);
+    goalItem.appendChild(removeBtn);
+    goalList.appendChild(goalItem);
+
+    goalInput.value = "";
+});

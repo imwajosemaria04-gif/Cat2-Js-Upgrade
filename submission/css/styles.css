@@ -225,3 +225,58 @@ footer {
         justify-content: center;
     }
 }
+/* WISHLIST / GOALS SECTION */
+.wishlist {
+    margin-top: 40px;
+    padding: 20px;
+    background: var(--surface);
+    border-radius: var(--radius);
+    border: 1px solid rgba(255,255,255,0.08);
+    text-align: center;
+}
+
+.wishlist h2 {
+    margin-bottom: 15px;
+}
+
+.wishlist input {
+    padding: 10px;
+    width: 60%;
+    max-width: 300px;
+    border: none;
+    border-radius: var(--radius);
+    margin-right: 10px;
+    outline: none;
+}
+
+.wishlist button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: var(--radius);
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.wishlist button:hover {
+    transform: scale(1.05);
+}
+
+.goal-item {
+    margin-top: 15px;
+    padding: 10px;
+    background: rgba(255,255,255,0.05);
+    border-radius: var(--radius);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.goal-item button {
+    background: red;
+    color: white;
+    padding: 5px 10px;
+    border-radius: var(--radius);
+}
