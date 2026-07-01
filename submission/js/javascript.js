@@ -73,9 +73,22 @@ form.addEventListener("submit", function (e) {
     }
 
     // Success message
-    message.textContent = `✅ Thanks ${name}! You rated your session ${rating}/5.`;
+    const feedbackText = `✅ Thanks ${name}! You rated your session ${rating}/5.`;
+
+message.textContent = feedbackText;
+
+// Save to localStorage
+localStorage.setItem("feedbackMessage", feedbackText);
     message.style.color = "lightgreen";
 
     // reset form
     form.reset();
+});
+// Load saved message on page load
+window.addEventListener("load", function () {
+    const savedMessage = localStorage.getItem("feedbackMessage");
+
+    if (savedMessage) {
+        document.getElementById("formMessage").textContent = savedMessage;
+    }
 });
