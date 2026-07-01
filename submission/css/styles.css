@@ -280,3 +280,12 @@ footer {
     padding: 5px 10px;
     border-radius: var(--radius);
 }
+.hidden-caption {
+    opacity: 0;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+.hidden-caption.show {
+    opacity: 1;
+}

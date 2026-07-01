@@ -92,3 +92,9 @@ window.addEventListener("load", function () {
         document.getElementById("formMessage").textContent = savedMessage;
     }
 });
+const banner = document.getElementById("banner");
+const caption = document.getElementById("caption");
+
+banner.addEventListener("click", function () {
+    caption.classList.toggle("show");
+});
