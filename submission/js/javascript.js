@@ -49,3 +49,33 @@ addGoalBtn.addEventListener("click", function () {
 
     goalInput.value = "";
 });
+const form = document.getElementById("feedbackForm");
+const message = document.getElementById("formMessage");
+
+form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const rating = document.getElementById("rating").value;
+    const comment = document.getElementById("comment").value.trim();
+
+    // Validation
+    if (name === "" || rating === "" || comment === "") {
+        message.textContent = "⚠️ Please fill in all fields.";
+        message.style.color = "red";
+        return;
+    }
+
+    if (name.length < 2) {
+        message.textContent = "⚠️ Name is too short.";
+        message.style.color = "red";
+        return;
+    }
+
+    // Success message
+    message.textContent = `✅ Thanks ${name}! You rated your session ${rating}/5.`;
+    message.style.color = "lightgreen";
+
+    // reset form
+    form.reset();
+});
