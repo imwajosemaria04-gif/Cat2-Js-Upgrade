@@ -1,0 +1,5 @@
+This project upgrades a previously built HTML and CSS website for Alex Fitness Coach by adding JavaScript functionality. 
+
+The Programs section was made dynamic using a loop to render items from a JavaScript array. A goal feature was added where users can add and remove fitness goals interactively. 
+
+A feedback form was implemented with validation to ensure correct input and display messages to the user. The project also uses localStorage to save feedback so it remains after page refresh. Finally, the hero banner includes a click feature that reveals a motivational message using class toggling. These updates demonstrate DOM manipulation, events, loops, form handling, and local storage in JavaScript.
